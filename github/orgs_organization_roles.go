@@ -29,26 +29,6 @@ type CustomOrgRoles struct {
 	BaseRole    *string       `json:"base_role,omitempty"`
 }
 
-// OrganizationCustomRepoRoles represents custom repository roles available in specified organization.
-type OrganizationCustomRepoRoles struct {
-	TotalCount      *int               `json:"total_count,omitempty"`
-	CustomRepoRoles []*CustomRepoRoles `json:"custom_roles,omitempty"`
-}
-
-// CustomRepoRoles represents custom repository roles for an organization.
-// See https://docs.github.com/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization
-// for more information.
-type CustomRepoRoles struct {
-	ID          *int64        `json:"id,omitempty"`
-	Name        *string       `json:"name,omitempty"`
-	Description *string       `json:"description,omitempty"`
-	BaseRole    *string       `json:"base_role,omitempty"`
-	Permissions []string      `json:"permissions,omitempty"`
-	Org         *Organization `json:"organization,omitempty"`
-	CreatedAt   *Timestamp    `json:"created_at,omitempty"`
-	UpdatedAt   *Timestamp    `json:"updated_at,omitempty"`
-}
-
 // CreateOrUpdateOrgRoleOptions represents options required to create or update a custom organization role.
 type CreateOrUpdateOrgRoleOptions struct {
 	Name        *string  `json:"name,omitempty"`
